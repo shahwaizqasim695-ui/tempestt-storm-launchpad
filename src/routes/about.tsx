@@ -185,7 +185,7 @@ function AboutPage() {
             </div>
             <p className="mt-4 text-xs text-muted-foreground">Retailer search results and availability may vary.</p>
             <div className="mx-auto mt-9 flex max-w-[560px] flex-wrap justify-center gap-x-10 gap-y-3 border-t border-primary/40 pt-5 text-[10px] font-bold uppercase tracking-[.16em] text-muted-foreground"><span>ISBN <span className="text-foreground">978-1-963456-78-0</span></span><span>Publisher <span className="text-foreground">Parker Publishers</span></span></div>
-            <Link to="/#series" className="mt-12 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.2em] text-primary hover:text-copper">Explore the rest of the collection <ArrowRight size={16} /></Link>
+            <a href="/#series" className="mt-12 inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[.2em] text-primary hover:text-copper">Explore the rest of the collection <ArrowRight size={16} /></a>
           </div>
         </section>
       </main>

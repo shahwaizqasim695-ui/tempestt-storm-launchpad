@@ -57,8 +57,8 @@ export function SiteHeader() {
       </div>
       {menuOpen && (
         <nav className="border-t border-border bg-night px-5 py-5 lg:hidden" aria-label="Mobile navigation">
-          {[...sections, { label: "Get the Book" }].map(item => (
-            <NavAnchor key={item.label} item={{ ...item, hash: item.hash ?? (item.label === "Get the Book" ? "get-the-book" : undefined) }} className="block border-b border-border py-4 font-display text-2xl text-foreground" />
+          {[...sections, { label: "Get the Book", hash: "get-the-book" }].map(item => (
+            <NavAnchor key={item.label} item={item as NavItem} className="block border-b border-border py-4 font-display text-2xl text-foreground" />
           ))}
         </nav>
       )}
