@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import cover from "@/assets/jessica-front.jpg.asset.json";
 import portrait from "@/assets/tempestt-portrait.jpg.asset.json";
-import atmosphere from "@/assets/jessica-atmosphere.jpg.asset.json";
+import atmosphere from "@/assets/fire-landscape.jpg.asset.json";
 
 const navigation = [
   { label: "The Story", href: "#story" },
