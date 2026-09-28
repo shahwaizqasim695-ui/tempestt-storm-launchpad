@@ -19,6 +19,8 @@
  */
 
 @theme inline {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,26 +64,30 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.25rem;
+  --background: oklch(0.115 0.009 40);
+  --foreground: oklch(0.95 0.016 72);
+  --card: oklch(0.17 0.012 42);
+  --card-foreground: oklch(0.95 0.016 72);
+  --popover: oklch(0.17 0.012 42);
+  --popover-foreground: oklch(0.95 0.016 72);
+  --primary: oklch(0.69 0.115 48);
+  --primary-foreground: oklch(0.12 0.01 40);
+  --secondary: oklch(0.22 0.017 40);
+  --secondary-foreground: oklch(0.95 0.016 72);
+  --muted: oklch(0.22 0.017 40);
+  --muted-foreground: oklch(0.7 0.014 68);
+  --accent: oklch(0.28 0.025 40);
+  --accent-foreground: oklch(0.95 0.016 72);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.39 0.024 46 / 55%);
+  --input: oklch(0.39 0.024 46);
+  --ring: oklch(0.69 0.115 48);
+  --ember: oklch(0.61 0.18 35);
+  --copper: oklch(0.75 0.085 61);
+  --night: oklch(0.095 0.009 40);
+  --blue-glow: oklch(0.46 0.055 236);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -95,6 +101,13 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+@theme inline {
+  --color-ember: var(--ember);
+  --color-copper: var(--copper);
+  --color-night: var(--night);
+  --color-blue-glow: var(--blue-glow);
 }
 
 .dark {
@@ -140,5 +153,15 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
   }
 }
+
+html { scroll-behavior: smooth; }
+::selection { background: var(--primary); color: var(--primary-foreground); }
+.font-display { font-family: var(--font-display); }
+.hero-veiling { background: linear-gradient(90deg, var(--night) 0%, color-mix(in oklab, var(--night) 95%, transparent) 36%, color-mix(in oklab, var(--night) 42%, transparent) 73%, color-mix(in oklab, var(--night) 72%, transparent) 100%); }
+.hero-bottom { background: linear-gradient(0deg, var(--night), transparent 90%); }
+.ember-field { background-image: radial-gradient(circle at 10% 25%, var(--ember) 0 1px, transparent 2px), radial-gradient(circle at 83% 70%, var(--copper) 0 1px, transparent 2px), radial-gradient(circle at 44% 80%, var(--ember) 0 1px, transparent 2px); background-size: 229px 187px; opacity: .27; animation: ember-drift 18s linear infinite alternate; }
+@keyframes ember-drift { from { transform: translateY(0); } to { transform: translateY(-36px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ember-field { animation: none; } }
