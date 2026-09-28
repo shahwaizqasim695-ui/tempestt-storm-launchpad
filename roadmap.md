@@ -2,3 +2,5 @@
 - [x] Add series, purchase, newsletter, and publisher sections.
 - [x] Store newsletter signups in Lovable Cloud.
 - [x] Verify desktop and mobile page rendering and newsletter behavior.
+- [x] Rebuild the purchase section as a prominent cinematic CTA banner.
+- [x] Build the About the Book page (/about) with synopsis, themes, and chapter list from the manuscript.
