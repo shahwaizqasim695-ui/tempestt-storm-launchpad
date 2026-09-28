@@ -1,17 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Check, Menu, X } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
+import { SectionLabel } from "@/components/section-label";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { supabase } from "@/integrations/supabase/client";
 import cover from "@/assets/jessica-front.jpg.asset.json";
 import portrait from "@/assets/tempestt-portrait.jpg.asset.json";
 import atmosphere from "@/assets/fire-landscape.jpg.asset.json";
-
-const navigation = [
-  { label: "The Story", href: "#story" },
-  { label: "The Series", href: "#series" },
-  { label: "The Author", href: "#author" },
-];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,17 +52,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-night/90 backdrop-blur-xl">
-        <div className="mx-auto grid h-[72px] max-w-[1560px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 sm:px-8 lg:px-14">
-          <a href="#top" className="min-w-0 font-display text-[25px] leading-none font-semibold text-foreground sm:text-[29px]" aria-label="Mastersippi J2, back to top">Master<span className="text-copper italic">sippi</span> <span className="text-primary">J2</span><span className="ml-2 hidden align-middle font-body text-[9px] font-medium uppercase tracking-[.24em] text-muted-foreground xl:inline">The Storm Collection</span></a>
-          <div className="hidden items-center gap-10 lg:flex">
-            <nav className="flex items-center gap-9" aria-label="Main navigation">{navigation.map(item => <a key={item.href} href={item.href} className="text-[11px] font-semibold uppercase tracking-[.18em] text-muted-foreground transition-colors hover:text-primary">{item.label}</a>)}</nav>
-            <Button asChild className="h-10 rounded-none border border-primary bg-transparent px-6 text-[10px] font-bold uppercase tracking-[.19em] text-primary shadow-none hover:bg-primary hover:text-primary-foreground"><a href="#get-the-book">Get the Book <ArrowUpRight /></a></Button>
-          </div>
-          <Button variant="ghost" size="icon" className="h-10 w-10 rounded-none text-foreground lg:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</Button>
-        </div>
-        {menuOpen && <nav className="border-t border-border bg-night px-5 py-5 lg:hidden" aria-label="Mobile navigation">{[...navigation, { label: "Get the Book", href: "#get-the-book" }].map(item => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="block border-b border-border py-4 font-display text-2xl text-foreground">{item.label}</a>)}</nav>}
-      </header>
+      <SiteHeader />
 
       <main id="top">
         <section className="relative isolate min-h-[760px] overflow-hidden bg-night pt-[72px] lg:min-h-[800px]" aria-labelledby="hero-heading">
