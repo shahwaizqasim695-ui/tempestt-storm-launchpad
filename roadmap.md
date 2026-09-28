@@ -1,0 +1,4 @@
+- [x] Build the homepage around the supplied cover and author material.
+- [x] Add series, purchase, newsletter, and publisher sections.
+- [x] Store newsletter signups in Lovable Cloud.
+- [x] Verify desktop and mobile page rendering and newsletter behavior.
