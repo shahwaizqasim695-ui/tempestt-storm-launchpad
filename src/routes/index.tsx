@@ -128,7 +128,7 @@ function HomePage() {
             <div className="relative mx-auto w-full max-w-[330px] lg:mx-0 lg:max-w-[400px]">
               <div className="absolute inset-6 rounded-full bg-ember/25 blur-[90px]" aria-hidden="true" />
               <img src={cover.url} alt="Mastersippi J2 – Jessica official book cover" loading="lazy" className="relative w-full border border-copper/40 object-contain shadow-[0_40px_110px_-30px_var(--night)]" />
-              <span className="absolute -bottom-3 left-0 border-l border-primary pl-4 text-[10px] font-bold uppercase tracking-[.25em] text-copper">The story begins here</span>
+              <span className="absolute -bottom-3 left-0 border-l border-primary pl-4 text-[10px] font-bold uppercase tracking-[.25em] text-copper">Get your copy</span>
             </div>
           </div>
         </section>
